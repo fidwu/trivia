@@ -1,0 +1,130 @@
+$blue-container: #34A6FF;
+$secondary-container: #ECE5F3;
+$selected: #4CC9F0;
+$correct: green;
+$incorrect: red;
+$primary: lightblue;
+$btn-border: #3C99E1;
+$purple: #3F37C9;
+
+html, body, #root, .App {
+    min-height: 100%;
+    background: url('img/bg.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#root {
+    min-height: 100vh;
+    padding: 1vh;
+    display: flex;
+    align-items: center;
+}
+
+.containerBox {
+    margin: 0 auto;
+    background: $blue-container;
+    box-shadow: 5px 5px 45px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 2vw;
+}
+
+.gameCode {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+}
+
+.joinGame, .createGame {
+    flex: 1;
+    margin: auto;
+    padding: 0 0.5em;
+}
+
+.divider {
+    display: flex;
+    flex-direction: column;
+}
+
+.divider:before, .divider:after {
+    content: "";
+    flex: 1;
+    border-right: 1px solid #000;
+    margin: auto;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+.questionInfo {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.subContainer {
+    background: $secondary-container;
+    border-radius: 7px;
+    text-align: center;
+    padding: 15px;
+    min-height: 15vh;
+    width: 100%;
+}
+
+.questionTitle {
+    color: black;
+}
+
+.answerChoices {
+    .btn-answerChoicesBtn {
+        background-color: $primary;
+        border-color: $btn-border;
+    }
+    .active {
+        background-color: $selected;
+    }
+    .btn-answerChoicesBtn.correct {
+        background-color: $correct;
+        color: white;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .incorrect {
+        background-color: $incorrect;
+        color: white;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.btn.btn-action {
+    background-color: $purple;
+    color: white;
+}
+
+.btn.btn-action:hover {
+    background-color: $purple;
+    color: white;
+}
+
+.points {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+    .containerBox {
+        width: 60%;
+    }
+}
